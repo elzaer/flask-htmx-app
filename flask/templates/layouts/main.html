@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>{% block title %}{% endblock %}</title>
+    
+    <link href="/static/css/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-50">
+    <div class="bg-gray-800 p-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="aspect-w-1 aspect-h-1 rounded-full mr-2"><img src="/static/images/egr_logo_tr_32.png" alt="EGR" class="object-cover"></div>
+          
+          <h1 class="text-white text-lg font-bold">Visual Assembly Guide</h1>
+        </div>
+
+        {% block nav %}{% endblock %}
+      </div>
+    </div>
+    {% block content %}
+    {% endblock content %}
+
+    <script src="/static/js/htmx.min.js"></script>
+    <script>
+      document.body.addEventListener('htmx:configRequest', (event) => {
+        event.detail.headers['X-CSRFToken'] = '{{ csrf_token() }}';
+      })
+    </script>
+  </body>
+</html>
