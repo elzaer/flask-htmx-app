@@ -14,7 +14,7 @@ Simple Python (Flask) app boilerplate using HTMx and Tailwind CSS
 
 2.  Clone the repo
 
-        $ git clone https://github.com/marcusschiesser/flask-htmx-app
+        $ git clone https://github.com/elzaer/flask-htmx-app
         $ cd flask-htmx-app
 
 3.  Initialize a python virtual environment for the project
